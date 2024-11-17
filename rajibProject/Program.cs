@@ -11,7 +11,7 @@ namespace rajibProject
             //b1.Length = 100;
             //b1.Breadth = 100;
             //b1.Height = 100;
-            
+
             //int len1 = b1.Length;
             //int bre1 = b1.Breadth;
             //int hei1 = b1.Height;
@@ -33,13 +33,18 @@ namespace rajibProject
             //Console.WriteLine("The perimeter is "+perimeter);
             //Console.ReadKey();
 
-            Student student = new Student();
-            student.setPerson(21,"Radib","Bhatapur");
-            student.displayPerson();
+            //Student student = new Student();
+            //student.setPerson(21,"Radib","Bhatapur");
+            //student.displayPerson();
 
-            student.setStd("CSIT", "E-");
-            student.displayStudent();
+            //student.setStd("CSIT", "E-");
+            //student.displayStudent();
 
+            Console.WriteLine("--eg on base keyword");
+            solution sol1= new solution();
+            solution sol2= new solution(10,5,20,30);
+            sol2.calcsum();
+            sol2.Calcdiff();
         }
     }
 }
