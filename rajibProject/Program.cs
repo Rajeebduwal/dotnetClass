@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 
 namespace rajibProject
 {
@@ -40,11 +41,49 @@ namespace rajibProject
             //student.setStd("CSIT", "E-");
             //student.displayStudent();
 
-            Console.WriteLine("--eg on base keyword");
-            solution sol1= new solution();
-            solution sol2= new solution(10,5,20,30);
-            sol2.calcsum();
-            sol2.Calcdiff();
+            //Console.WriteLine("--eg on base keyword");
+            //solution sol1= new solution();
+            //solution sol2= new solution(10,5,20,30);
+            //sol2.calcsum();
+            //sol2.Calcdiff();
+
+            //Answer a1 = new Answer();
+            //a1.calc1();
+            //a1.calc2(50,20);
+
+            //Answer1 an1 = new Answer1(40,50);
+            //an1.displaySum();
+            //an1.displayDiv();
+            //an1.displayDiff(50, 40);
+            //an1.displayMulti(10,5);
+
+            //ExceptionHandling e1 = new ExceptionHandling();
+            //e1.setData();
+
+            //CustomException ce1 = new CustomException();
+            //ce1.sendAge(21);
+
+            //Question1 q1 = new Question1(2, 3, 4);
+            //q1.getMax();
+            //Console.ReadLine();
+
+            //Console.WriteLine("--eg in interface--");
+            //InterfaceDemo ids = new InterfaceDemo();
+            //ids.calcSum(20, 30);
+            //ids.calcMulti(20, 5);
+            //ids.calcDiv(20,10);
+            
+            ////dynamic method dispatch;when subclass's object is assigned to reference variable of superclass then such reference will call the
+            ////subclass version of overriden method
+            //Calc1 c; //ref variable
+            //c = ids;
+            //c.calcSum(20, 30);
+            //c.calcMulti(20, 5);
+
+            FileHandlingDemo fh = new FileHandlingDemo();
+            fh.writeFile();
+            fh.readFile();
+           
         }
     }
 }
