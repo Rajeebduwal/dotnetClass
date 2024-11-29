@@ -19,7 +19,10 @@ namespace DatabaseExmaple
         {
             CrudOperation co = new CrudOperation();
             //co.insertData();
-            co.updateData();
+            //co.updateData();
+            co.displayData();
+            co.delData();
+            co.displayData();
             Console.ReadLine();
         }
     }

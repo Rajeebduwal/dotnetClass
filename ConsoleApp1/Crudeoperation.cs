@@ -105,5 +105,62 @@ namespace DatabaseExmaple
             }
         }
         // update table dynamically
+        //fetch data from database
+        public void displayData()
+        {
+            try
+            {
+                string cs = "Data Source=DESKTOP-1GSF0CC;Initial Catalog=db_nccs; Integrated Security=true;Trusted_Connection = True";
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                //fetch query
+                string disQuery = "select *from tbl_reg";
+                SqlCommand sc=new SqlCommand(disQuery,conn);
+                //to fecth data executeReader() method is used, it returns object of sqlDataReader that contains all the base of databse table
+                SqlDataReader row=sc.ExecuteReader();
+                //it contains all the row of table. to fetch one row at a time read() method is used
+                while (row.Read())
+                {
+                    Console.WriteLine("id is " + row["id"]);
+                    Console.WriteLine("username is " + row["username"]);
+                    Console.WriteLine("password " + row["password"]);
+                    Console.WriteLine("repassword  is " + row["repassword"]);
+                    Console.WriteLine("gender is " + row["gender"]);
+                    Console.WriteLine("faculty is " + row["faculty"]);
+                   
+
+                }
+                conn.Close ();
+            }
+            catch(SqlException s)
+            {
+                Console.WriteLine(s);
+            }
+        }
+        public void delData()
+        {
+            try
+            {
+                string cs = "Data Source=DESKTOP-1GSF0CC;Initial Catalog=db_nccs; Integrated Security=true;Trusted_Connection = True";
+                SqlConnection conn = new SqlConnection(cs);
+                conn.Open();
+                //fetch query
+                string delQuery = "delete from tbl_reg where id=@id";
+                Console.WriteLine("Enter id of a person which you want to del record");
+                string delId=Console.ReadLine();    
+                SqlCommand sc = new SqlCommand(delQuery, conn);
+                sc.Parameters.AddWithValue("id",delId);
+                int res=sc.ExecuteNonQuery();
+                if (res > 0)
+                {
+                    Console.WriteLine(res + "data deleted");
+                }
+                conn.Close();
+            }
+            catch (SqlException s)
+            {
+                Console.WriteLine(s);
+            }
+        }
     }
 }
